@@ -19,7 +19,8 @@ class UserTableView: UITableViewController {
   var users: [Users] = []
   var sections: Int = 4
   var elements: Int = 10
-  
+  var totalElements: Int = 10
+
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.register(PhotoCell.self, forCellReuseIdentifier: "photoCell")
@@ -56,38 +57,39 @@ class UserTableView: UITableViewController {
   func loadUser() {
     let parameters: [String: Any] = ["elements": elements]
     
-    if isList {
+    DispatchQueue.main.async {
+
+      if self.isList {
       ApiManager.shared.getDataUsers(parameters: parameters) { (response) in
-        DispatchQueue.main.async {
+
           if self.elements == 10 {
             self.users = [response]
           } else {
             self.users[0].results.append(contentsOf: response.results)
           }
           self.refreshData()
-        }
+        
       } fail: {
         print("fail")
       }
     } else {
       ApiManager.shared.getDataUser(parameters: parameters) { (response) in
-        DispatchQueue.main.async {
           self.user = [response]
           self.refreshData()
-        }
+      
       } fail: {
         print("fail")
       }
     }
+  
+    }
   }
   
   func refreshData() {
-    pullControl.endRefreshing()
-    activityIndicator.stopAnimating()
-    DispatchQueue.main.async {
+      self.pullControl.endRefreshing()
+      self.activityIndicator.stopAnimating()
       self.tableView.reloadData()
-    }
-  }
+   }
   
   @objc func refresh(_ sender: AnyObject) {
     loadUser()
@@ -165,7 +167,7 @@ class UserTableView: UITableViewController {
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     
     if isList {
-      return "10 users random"
+      return "\(totalElements) users random"
     }
     switch section {
     case 0:
@@ -199,6 +201,7 @@ class UserTableView: UITableViewController {
       let lastElement = users[0].results.count - 3
       if indexPath.row == lastElement {
         elements = 3
+        totalElements += 3
         loadUser()
       }
     }
@@ -207,5 +210,4 @@ class UserTableView: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
   }
-  
 }

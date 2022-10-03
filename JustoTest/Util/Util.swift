@@ -53,7 +53,5 @@ extension String {
     } catch let error as NSError {
       return false
     }
-    
   }
 }
-

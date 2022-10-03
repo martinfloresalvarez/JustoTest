@@ -34,6 +34,7 @@
 		D14E90F628EA9E5B0022F12E /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14E90F528EA9E5B0022F12E /* ButtonExtension.swift */; };
 		D14E90F828EA9E8C0022F12E /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14E90F728EA9E8C0022F12E /* ImageViewExtension.swift */; };
 		D14E90FA28EA9EB30022F12E /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14E90F928EA9EB30022F12E /* LabelExtension.swift */; };
+		D14E90FC28EAB8150022F12E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14E90FB28EAB8150022F12E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		D14E90F528EA9E5B0022F12E /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		D14E90F728EA9E8C0022F12E /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		D14E90F928EA9EB30022F12E /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
+		D14E90FB28EAB8150022F12E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				D14E90F428EA9E350022F12E /* Extensions */,
 				D113B3DF28E7C17B005E375F /* Constants.swift */,
+				D14E90FB28EAB8150022F12E /* Constants.swift */,
 				D14E90F228EA9D6F0022F12E /* UIConstants.swift */,
 				D113B3DE28E7C17B005E375F /* Util.swift */,
 			);
@@ -312,6 +315,7 @@
 				D113B3D928E7C12E005E375F /* RootView.swift in Sources */,
 				D14E90F328EA9D6F0022F12E /* UIConstants.swift in Sources */,
 				D14E90F628EA9E5B0022F12E /* ButtonExtension.swift in Sources */,
+				D14E90FC28EAB8150022F12E /* Constants.swift in Sources */,
 				D14E90E928EA632C0022F12E /* Users.swift in Sources */,
 				D113B3BB28E7BE82005E375F /* AppDelegate.swift in Sources */,
 				D113B3E128E7C17B005E375F /* FontsExtension.swift in Sources */,
